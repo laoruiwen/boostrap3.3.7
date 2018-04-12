@@ -1,0 +1,38 @@
+// Checkbox & Radio
+
+.transition_backface_visibility(@transition){
+  .transition(@transition);
+  .backface-visibility(~'hidden');
+}
+
+.show(@position){
+  background-position: @position;
+  opacity: 1;
+  display: block \9;
+}
+
+.hide(){
+  opacity: 0;
+  display: none \9;
+}
+
+.icon_icon-to-fade(show,@position:0 0){
+  .icon {
+    .show(@position);
+  }
+
+  .icon-to-fade {
+    .hide();
+  }
+}
+
+.icon_icon-to-fade(hide,@position:0 0){
+  .icon {
+    .hide();
+  }
+
+  .icon-to-fade {
+    .show(@position);
+  }
+}
+

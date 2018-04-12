@@ -43,8 +43,8 @@
 // Shell div to position the modal with bottom padding
 .modal-dialog {
   position: relative;
-  width: auto;
-  margin: 10px;
+  width: @modal-md;
+  margin: 50px auto;
 }
 
 // Actual modal
@@ -55,7 +55,7 @@
   border: 1px solid @modal-content-border-color;
   border-radius: @border-radius-large;
   .box-shadow(0 3px 9px rgba(0,0,0,.5));
-  background-clip: padding-box;
+  //background-clip: padding-box;
   // Remove focus outline from opened modal
   outline: 0;
 }
@@ -79,6 +79,9 @@
 .modal-header {
   padding: @modal-title-padding;
   border-bottom: 1px solid @modal-header-border-color;
+  background-color : @modal-title-color;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
   &:extend(.clearfix all);
 }
 // Close icon
@@ -96,7 +99,7 @@
 // Where all modal content resides (sibling of .modal-header and .modal-footer)
 .modal-body {
   position: relative;
-  padding: @modal-inner-padding;
+  padding: @modal-inner-md-padding;
 }
 
 // Footer (for actions)
@@ -134,7 +137,6 @@
 @media (min-width: @screen-sm-min) {
   // Automatically set modal's width for larger viewports
   .modal-dialog {
-    width: @modal-md;
     margin: 30px auto;
   }
   .modal-content {
@@ -142,9 +144,26 @@
   }
 
   // Modal sizes
-  .modal-sm { width: @modal-sm; }
+  .modal-sm {
+    width: @modal-sm;
+    .modal-body {
+      padding: @modal-inner-sm-padding;
+    }
+  }
 }
 
 @media (min-width: @screen-md-min) {
-  .modal-lg { width: @modal-lg; }
+  .modal-lg {
+    width: @modal-lg;
+    .modal-body {
+      padding: @modal-inner-lg-padding;
+    }
+  }
+
+  .modal-hg {
+    width: @modal-lg;
+    .modal-body {
+      padding: @modal-inner-hg-padding;
+    }
+  }
 }

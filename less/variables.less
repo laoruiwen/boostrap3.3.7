@@ -15,11 +15,18 @@
 @gray-lighter:           lighten(@gray-base, 93.5%); // #eee
 
 @brand-primary:         darken(#428bca, 6.5%); // #337ab7
-@brand-success:         #5cb85c;
+@brand-success:         #39b2a9;
 @brand-info:            #5bc0de;
-@brand-warning:         #f0ad4e;
+@brand-warning:         #f1c40f;
 @brand-danger:          #d9534f;
-
+@brand-complete:        #82e053;
+@brand-progress:        #e67e22;
+@brand-fail:            #ff6699;
+@brand-cancel:          #9B59B6;
+@brand-stop:            #34495e;
+@brand-left:            #9999ff;
+@brand-right:           #999900;
+@brand-white:           #ffffff;
 
 //== Scaffolding
 //
@@ -62,7 +69,7 @@
 //** Unit-less `line-height` for use in components like buttons.
 @line-height-base:        1.428571429; // 20/14
 //** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
-@line-height-computed:    floor((@font-size-base * @line-height-base)); // ~20px
+@line-height-computed:    floor((@font-size-base * @line-height-base)); // ~10px
 
 //** By default, this inherits from the `<body>`.
 @headings-font-family:    inherit;
@@ -213,7 +220,7 @@
 @input-height-small:             (floor(@font-size-small * @line-height-small) + (@padding-small-vertical * 2) + 2);
 
 //** `.form-group` margin
-@form-group-margin-bottom:       15px;
+@form-group-margin-bottom:       5px;
 
 @legend-color:                   @gray-dark;
 @legend-border-color:            #e5e5e5;
@@ -419,7 +426,7 @@
 //##
 
 //=== Shared nav styles
-@nav-link-padding:                          10px 15px;
+@nav-link-padding:                          0 8px;
 @nav-link-hover-bg:                         @gray-lighter;
 
 @nav-disabled-link-color:                   @gray-light;
@@ -576,6 +583,21 @@
 @label-warning-bg:            @brand-warning;
 //** Danger label background color
 @label-danger-bg:             @brand-danger;
+//** Complete label background color
+@label-complete-bg:           @brand-complete;
+//** Progress label background color
+@label-progress-bg:           @brand-progress;
+//** Fail label background color
+@label-fail-bg:               @brand-fail;
+//** Cancel label background color
+@label-cancel-bg:             @brand-cancel;
+//** Stop label background color
+@label-stop-bg:               @brand-stop;
+//** Left label background color
+@label-left-bg:               @brand-left;
+//** Right label background color
+@label-right-bg:              @brand-right;
+
 
 //** Default label text color
 @label-color:                 #fff;
@@ -587,11 +609,30 @@
 //
 //##
 
+//** Padding applied left right to the modal body
+@modal-left-right-padding:    10px;
+
+//** Padding applied sm to the modal body
+@modal-inner-sm-padding:      20px @modal-left-right-padding;
+
 //** Padding applied to the modal body
-@modal-inner-padding:         15px;
+@modal-inner-padding:         15px @modal-left-right-padding;
+
+//** Padding applied md to the modal body
+@modal-inner-md-padding:      10px @modal-left-right-padding;
+
+//** Padding applied lg to the modal body
+@modal-inner-lg-padding:      5px @modal-left-right-padding;
+
+//** Padding applied lg to the modal body
+@modal-inner-hg-padding:      0 @modal-left-right-padding;
 
 //** Padding applied to the modal title
-@modal-title-padding:         15px;
+@modal-title-padding:         5px @modal-left-right-padding;
+
+//** Color to the modal title
+@modal-title-color:           #6ea4c7;
+
 //** Modal title line-height
 @modal-title-line-height:     @line-height-base;
 
@@ -612,7 +653,7 @@
 @modal-footer-border-color:   @modal-header-border-color;
 
 @modal-lg:                    900px;
-@modal-md:                    600px;
+@modal-md:                    550px;
 @modal-sm:                    300px;
 
 
@@ -620,7 +661,10 @@
 //
 //## Define alert colors, border radius, and padding.
 
-@alert-padding:               15px;
+@alert-padding-left:              18px;
+@alert-padding-right:             8px;
+@alert-padding-top:               4px;
+@alert-padding-bottom:            4px;
 @alert-border-radius:         @border-radius-base;
 @alert-link-font-weight:      bold;
 
@@ -703,8 +747,8 @@
 //##
 
 @panel-bg:                    #fff;
-@panel-body-padding:          15px;
-@panel-heading-padding:       10px 15px;
+@panel-body-padding:          0 10px;
+@panel-heading-padding:       5px 10px;
 @panel-footer-padding:        @panel-heading-padding;
 @panel-border-radius:         @border-radius-base;
 
@@ -736,7 +780,9 @@
 @panel-danger-border:         @state-danger-border;
 @panel-danger-heading-bg:     @state-danger-bg;
 
-
+@panel-custom-text:          #fff;
+@panel-custom-border:        #6ea4c7;
+@panel-custom-heading-bg:    #6ea4c7;
 //== Thumbnails
 //
 //##
@@ -867,3 +913,49 @@
 @dl-horizontal-breakpoint:    @grid-float-breakpoint;
 //** Horizontal line color.
 @hr-border:                   @gray-lighter;
+
+
+//== Checkbox & Radio
+//
+//##
+
+//** Transition time
+@transition-time:                       0.25s;
+//** Normal position
+@normal-position:                       -90px 0;
+//** Checked position
+@checked-position:                      -60px -30px;
+//** Disabled position
+@disabled-position:                     -30px -60px;
+//** Disabled checked position
+@disabled-checked-position:             0 -90px;
+//** Checkbox url
+@checkbox-url:                          "../../images/checkbox.png";
+//** Radio url
+@radio-url:                             "../../images/radio.png";
+
+
+//== Toggle
+//
+//##
+
+//** Toggle icon on url
+@toggle-icon-on-url:                   "../../images/toggle/icon-on.png";
+//** Toggle icon off url
+@toggle-icon-off-url:                  "../../images/toggle/icon-off.png";
+//** Toggle block on url
+@toggle-block-on-url:                   "../../images/toggle/block-on.png";
+//** Toggle block off url
+@toggle-block-off-url:                  "../../images/toggle/block-off.png";
+//** Toggle icon radius
+@toggle-icon-radius:                    6px 7px 7px 6px;
+//** Toggle radio radius
+@toggle-radio-radius:                   6px;
+//** Toggle off radius
+@toggle-off-radius:                     7px 6px 6px 7px;
+//** Toggle color
+@toggle-color:                          @brand-stop;
+//** Toggle off color
+@toggle-off-color:                      #cbd2d8;
+//** Toggle radio color
+@toggle-radio-color:                    @brand-success;
