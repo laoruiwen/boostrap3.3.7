@@ -12,7 +12,7 @@
   position: relative;
   min-height: @navbar-height; // Ensure a navbar always shows (e.g., without a .navbar-brand in collapsed mode)
   margin-bottom: @navbar-margin-bottom;
-  border: 1px solid transparent;
+  //border: 1px solid transparent;
 
   // Prevent floats from breaking the navbar
   &:extend(.clearfix all);
@@ -324,10 +324,28 @@
 
 // Dropdown menus
 
+.navbar-inverse .navbar-nav>.open>.dropdown-menu {
+  padding: 3px 4px;
+  background-color: @wet-asphalt;
+
+  >li>a {
+    padding: 6px 9px;
+    color: #e1e4e7;
+    border-radius: 4px;
+
+    &:hover,
+    &:focus {
+      color: @inverse;
+      background-color: @brand-primary;
+    }
+  }
+}
+
 // Menu position and menu carets
 .navbar-nav > li > .dropdown-menu {
-  margin-top: 0;
-  .border-top-radius(0);
+  min-width: 100%;
+  margin-top: 9px;
+  border-radius: 4px;
 }
 // Menu position and menu caret support for dropups via extra dropup class
 .navbar-fixed-bottom .navbar-nav > li > .dropdown-menu {
@@ -358,10 +376,14 @@
 // Add a class to make any element properly align itself vertically within the navbars.
 
 .navbar-text {
-  .navbar-vertical-align(@line-height-computed);
+  font-size: @font-size-large;
+  line-height: 1.7222;
+  //.navbar-vertical-align(@line-height-computed);
 
   @media (min-width: @grid-float-breakpoint) {
     float: left;
+    margin-top: 0;
+    margin-bottom: 0;
     margin-left: @navbar-padding-horizontal;
     margin-right: @navbar-padding-horizontal;
   }
@@ -383,7 +405,7 @@
     margin-right: -@navbar-padding-horizontal;
 
     ~ .navbar-right {
-      margin-right: 0;
+      margin-right: 10px;
     }
   }
 }
@@ -547,6 +569,8 @@
   .navbar-nav {
     > li > a {
       color: @navbar-inverse-link-color;
+      font-weight:700;
+      line-height: 1.72222;
 
       &:hover,
       &:focus {

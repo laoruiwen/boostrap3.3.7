@@ -2,6 +2,40 @@
 // Variables
 // --------------------------------------------------
 
+// == Colors
+//
+//##
+
+// Color swatches
+@turquoise:                 #1abc9c;
+@green-sea:                 #16a085;
+
+@emerald:                   #2ecc71;
+@nephritis:                 #27ae60;
+
+@peter-river:               #3498db;
+@belize-hole:               #2980b9;
+
+@amethyst:                  #9b59b6;
+@wisteria:                  #8e44ad;
+
+@wet-asphalt:               #34495e;
+@midnight-blue:             #2c3e50;
+
+@sun-flower:                #f1c40f;
+@orange:                    #f39c12;
+
+@carrot:                    #e67e22;
+@pumpkin:                   #d35400;
+
+@alizarin:                  #e74c3c;
+@pomegranate:               #c0392b;
+
+@clouds:                    #ecf0f1;
+@silver:                    #bdc3c7;
+
+@concrete:                  #95a5a6;
+@asbestos:                  #7f8c8d;
 
 //== Colors
 //
@@ -11,22 +45,23 @@
 @gray-darker:            lighten(@gray-base, 13.5%); // #222
 @gray-dark:              lighten(@gray-base, 20%);   // #333
 @gray:                   lighten(@gray-base, 33.5%); // #555
-@gray-light:             lighten(@gray-base, 46.7%); // #777
-@gray-lighter:           lighten(@gray-base, 93.5%); // #eee
+@gray-light:             lighten(@gray-base, 80%); // #777
+@gray-lighter:           lighten(@gray-base, 96.5%); // #eee
+@inverse:                white;
 
 @brand-primary:         darken(#428bca, 6.5%); // #337ab7
+@brand-secondary:       @turquoise;
 @brand-success:         #39b2a9;
-@brand-info:            #5bc0de;
-@brand-warning:         #f1c40f;
-@brand-danger:          #d9534f;
+@brand-info:            @peter-river;
+@brand-warning:         @sun-flower;
+@brand-danger:          @alizarin;
 @brand-complete:        #82e053;
 @brand-progress:        #e67e22;
 @brand-fail:            #ff6699;
 @brand-cancel:          #9B59B6;
-@brand-stop:            #34495e;
+@brand-stop:            @wet-asphalt;
 @brand-left:            #9999ff;
 @brand-right:           #999900;
-@brand-white:           #ffffff;
 
 //== Scaffolding
 //
@@ -35,14 +70,14 @@
 //** Background color for `<body>`.
 @body-bg:               #fff;
 //** Global text color on `<body>`.
-@text-color:            @gray-dark;
+@text-color:            @wet-asphalt;
 
 //** Global textual link color.
-@link-color:            @brand-primary;
-//** Link hover color set via `darken()` function.
-@link-hover-color:      darken(@link-color, 15%);
+@link-color:            @peter-river;
+  //** Link hover color set via `darken()` function.
+@link-hover-color:      @belize-hole;
 //** Link hover decoration.
-@link-hover-decoration: underline;
+@link-hover-decoration: none;
 
 
 //== Typography
@@ -55,25 +90,25 @@
 @font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
 @font-family-base:        @font-family-sans-serif;
 
-@font-size-base:          14px;
-@font-size-large:         ceil((@font-size-base * 1.25)); // ~18px
-@font-size-small:         ceil((@font-size-base * 0.85)); // ~12px
+@font-size-base:          12px;
+@font-size-large:         floor((@font-size-base * 1.2)); // ~18px
+@font-size-small:         floor((@font-size-base * 0.85)); // ~12px
 
-@font-size-h1:            floor((@font-size-base * 2.6)); // ~36px
-@font-size-h2:            floor((@font-size-base * 2.15)); // ~30px
-@font-size-h3:            ceil((@font-size-base * 1.7)); // ~24px
-@font-size-h4:            ceil((@font-size-base * 1.25)); // ~18px
-@font-size-h5:            @font-size-base;
-@font-size-h6:            ceil((@font-size-base * 0.85)); // ~12px
+@font-size-h1:              floor((@font-size-base * 1.6)); // ~62px
+@font-size-h2:              floor((@font-size-base * 1.6)); // ~52px
+@font-size-h3:              floor((@font-size-base * 1.4)); // ~40px
+@font-size-h4:              floor((@font-size-base * 1.4)); // ~29px
+@font-size-h5:              floor((@font-size-base * 1.2)); // ~28px
+@font-size-h6:              floor((@font-size-base * 1.2)); // ~24px
 
 //** Unit-less `line-height` for use in components like buttons.
-@line-height-base:        1.428571429; // 20/14
+@line-height-base:          1.42857143; // 31/18
 //** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
-@line-height-computed:    floor((@font-size-base * @line-height-base)); // ~10px
+@line-height-computed:      floor((@font-size-base * @line-height-base)); // ~31px
 
 //** By default, this inherits from the `<body>`.
 @headings-font-family:    inherit;
-@headings-font-weight:    500;
+@headings-font-weight:    700;
 @headings-line-height:    1.1;
 @headings-color:          inherit;
 
@@ -94,32 +129,34 @@
 //
 //## Define common padding and border radius sizes and more. Values based on 14px text and 1.428 line-height (~20px to start).
 
-@padding-base-vertical:     6px;
-@padding-base-horizontal:   12px;
+@padding-base-vertical:     0;
+@padding-base-horizontal:   5px;
 
-@padding-large-vertical:    10px;
-@padding-large-horizontal:  16px;
+@padding-large-vertical:    8px;
+@padding-large-horizontal:  10px;
 
-@padding-small-vertical:    5px;
-@padding-small-horizontal:  10px;
+@padding-small-vertical:    1px;
+@padding-small-horizontal:  5px;
 
 @padding-xs-vertical:       1px;
 @padding-xs-horizontal:     5px;
 
 @line-height-large:         1.3333333; // extra decimals for Win 8.1 Chrome
-@line-height-small:         1.5;
+@line-height-small:         1.8;
 
 @border-radius-base:        4px;
 @border-radius-large:       6px;
-@border-radius-small:       3px;
+@border-radius-small:       4px;
 
+//** Default font-size in components
+@component-font-size-base:  ceil((@font-size-base * 1.2)); // ~15px
 //** Global color for active items (e.g., navs or dropdowns).
 @component-active-color:    #fff;
 //** Global background color for active items (e.g., navs or dropdowns).
 @component-active-bg:       @brand-primary;
 
 //** Width of the `border` for generating carets that indicate dropdowns.
-@caret-width-base:          4px;
+@caret-width-base:          6px;
 //** Carets increase slightly in size for larger components.
 @caret-width-large:         5px;
 
@@ -149,11 +186,43 @@
 //
 //## For each of Bootstrap's buttons, define text, background and border color.
 
+@btn-font-size-base:         @component-font-size-base;
+@btn-font-size-xs:           ceil((@component-font-size-base * 0.8));   // ~12px
+@btn-font-size-sm:           floor((@component-font-size-base * 0.867)); // ~13px
+@btn-font-size-lg:           ceil((@component-font-size-base * 1.133));  // ~17px
+@btn-font-size-hg:           floor((@component-font-size-base * 1.467)); // ~22px
+
+@btn-line-height-base:       1.4;   // ~21px
+@btn-line-height-hg:         1.227; // ~27px
+@btn-line-height-lg:         1.471; // ~25px
+@btn-line-height-sm:         1.385; // ~16px
+@btn-line-height-xs:         1.083; // ~13px
+
 @btn-font-weight:                normal;
 
-@btn-default-color:              #333;
-@btn-default-bg:                 #fff;
-@btn-default-border:             #ccc;
+@btn-default-color:          @inverse;
+@btn-default-bg:             @gray-light;
+@btn-hover-bg:               mix(@gray-light, white, 80%);
+
+@btn-active-bg:              mix(@gray-light, black, 85%);
+
+@btn-primary-hover-bg:       mix(@brand-secondary, white, 80%);
+@btn-primary-active-bg:      mix(@brand-secondary, black, 85%);
+
+@btn-info-hover-bg:          mix(@brand-info, white, 80%);
+@btn-info-active-bg:         mix(@brand-info, black, 85%);
+
+@btn-success-hover-bg:       mix(@brand-success, white, 80%);
+@btn-success-active-bg:      mix(@brand-success, black, 85%);
+
+@btn-danger-hover-bg:        mix(@brand-danger, white, 80%);
+@btn-danger-active-bg:       mix(@brand-danger, black, 85%);
+
+@btn-warning-hover-bg:       overlay(@brand-warning, darken(white, 37.5%));
+@btn-warning-active-bg:      mix(@brand-warning, black, 85%);
+
+@btn-inverse-hover-bg:       overlay(@brand-primary, darken(white, 37.5%));
+@btn-inverse-active-bg:      mix(@brand-primary, black, 85%);
 
 @btn-primary-color:              #fff;
 @btn-primary-bg:                 @brand-primary;
@@ -175,7 +244,7 @@
 @btn-danger-bg:                  @brand-danger;
 @btn-danger-border:              darken(@btn-danger-bg, 5%);
 
-@btn-link-disabled-color:        @gray-light;
+@btn-link-disabled-color:    @gray-light;
 
 // Allows for customizing button radius independently from global border radius
 @btn-border-radius-base:         @border-radius-base;
@@ -187,13 +256,27 @@
 //
 //##
 
+@input-font-size-base:     @component-font-size-base;
+@input-font-size-sm:       floor((@component-font-size-base * 0.867)); // ~13px
+@input-font-size-lg:       ceil((@component-font-size-base * 1.133)); // ~17px
+@input-font-size-hg:       floor((@component-font-size-base * 1.467)); // ~22px
+
+@input-line-height-base:   1.467; // ~22px
+@input-line-height-sm:     1.462; // ~19px
+@input-line-height-lg:     1.235; // ~21px
+@input-line-height-hg:     1.318; // ~29px
+
+@input-icon-font-size:     ceil((@component-font-size-base * 1.067));  // ~16px
+@input-icon-font-size-lg:  ceil((@component-font-size-base * 1.2));  // ~18px
+@input-icon-font-size-hg:  ceil((@component-font-size-base * 1.333));  // ~20px
+
 //** `<input>` background color
 @input-bg:                       #fff;
 //** `<input disabled>` background color
 @input-bg-disabled:              @gray-lighter;
 
 //** Text color for `<input>`s
-@input-color:                    @gray;
+@input-color:                    @wet-asphalt;
 //** `<input>` border color
 @input-border:                   #ccc;
 
@@ -207,7 +290,7 @@
 @input-border-radius-small:      @border-radius-small;
 
 //** Border color for inputs on focus
-@input-border-focus:             #66afe9;
+@input-border-focus:             @brand-primary;
 
 //** Placeholder text color
 @input-color-placeholder:        #999;
@@ -217,7 +300,12 @@
 //** Large `.form-control` height
 @input-height-large:             (ceil(@font-size-large * @line-height-large) + (@padding-large-vertical * 2) + 2);
 //** Small `.form-control` height
-@input-height-small:             (floor(@font-size-small * @line-height-small) + (@padding-small-vertical * 2) + 2);
+@input-height-small:             25px;  //(floor(@font-size-small * @line-height-small) + (@padding-small-vertical * 2) + 2);
+
+@input-height-sm:          35px;
+@input-height-base:        41px;
+@input-height-lg:          45px;
+@input-height-hg:          53px;
 
 //** `.form-group` margin
 @form-group-margin-bottom:       5px;
@@ -248,7 +336,7 @@
 @dropdown-divider-bg:            #e5e5e5;
 
 //** Dropdown link text color.
-@dropdown-link-color:            @gray-dark;
+@dropdown-link-color:            #606d7a;
 //** Hover color for dropdown links.
 @dropdown-link-hover-color:      darken(@gray-dark, 5%);
 //** Hover background for dropdown links.
@@ -364,7 +452,7 @@
 //##
 
 // Basics of a navbar
-@navbar-height:                    50px;
+@navbar-height:                    25px;
 @navbar-margin-bottom:             @line-height-computed;
 @navbar-border-radius:             @border-radius-base;
 @navbar-padding-horizontal:        floor((@grid-gutter-width / 2));
@@ -384,6 +472,11 @@
 @navbar-default-link-disabled-color:       #ccc;
 @navbar-default-link-disabled-bg:          transparent;
 
+// Navbar nav carets
+@navbar-default-caret-color:          @navbar-default-link-color;
+@navbar-default-caret-hover-color:    @navbar-default-link-hover-color;
+@navbar-default-caret-active-color:   @navbar-default-link-active-color;
+
 // Navbar brand label
 @navbar-default-brand-color:               @navbar-default-link-color;
 @navbar-default-brand-hover-color:         darken(@navbar-default-brand-color, 10%);
@@ -398,7 +491,7 @@
 //=== Inverted navbar
 // Reset inverted navbar basics
 @navbar-inverse-color:                      lighten(@gray-light, 15%);
-@navbar-inverse-bg:                         #222;
+@navbar-inverse-bg:                         @wet-asphalt;
 @navbar-inverse-border:                     darken(@navbar-inverse-bg, 10%);
 
 // Inverted navbar links
@@ -406,7 +499,7 @@
 @navbar-inverse-link-hover-color:           #fff;
 @navbar-inverse-link-hover-bg:              transparent;
 @navbar-inverse-link-active-color:          @navbar-inverse-link-hover-color;
-@navbar-inverse-link-active-bg:             darken(@navbar-inverse-bg, 10%);
+@navbar-inverse-link-active-bg:             transparent;
 @navbar-inverse-link-disabled-color:        #444;
 @navbar-inverse-link-disabled-bg:           transparent;
 
@@ -615,14 +708,14 @@
 //** Padding applied sm to the modal body
 @modal-inner-sm-padding:      20px @modal-left-right-padding;
 
-//** Padding applied to the modal body
-@modal-inner-padding:         15px @modal-left-right-padding;
-
 //** Padding applied md to the modal body
 @modal-inner-md-padding:      10px @modal-left-right-padding;
 
 //** Padding applied lg to the modal body
 @modal-inner-lg-padding:      5px @modal-left-right-padding;
+
+//** Padding applied to the modal body
+@modal-inner-padding:         5px @modal-left-right-padding;
 
 //** Padding applied lg to the modal body
 @modal-inner-hg-padding:      0 @modal-left-right-padding;
@@ -662,7 +755,7 @@
 //## Define alert colors, border radius, and padding.
 
 @alert-padding-left:              18px;
-@alert-padding-right:             8px;
+@alert-padding-right:             8.5px;
 @alert-padding-top:               4px;
 @alert-padding-bottom:            4px;
 @alert-border-radius:         @border-radius-base;

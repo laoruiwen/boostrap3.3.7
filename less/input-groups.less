@@ -76,14 +76,14 @@
 // -------------------------
 .input-group-addon {
   padding: @padding-base-vertical @padding-base-horizontal;
-  font-size: @font-size-base;
+  font-size: ceil((@font-size-base * 1.2));
   font-weight: normal;
   line-height: 1;
   color: @input-color;
   text-align: center;
   background-color: @input-group-addon-bg;
   border: 1px solid @input-group-addon-border-color;
-  border-radius: @input-border-radius;
+  border-radius: @input-border-radius-large;
 
   // Sizing
   &.input-sm {
