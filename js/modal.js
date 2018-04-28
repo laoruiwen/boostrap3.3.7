@@ -99,10 +99,12 @@
       transition ?
         that.$dialog // wait for modal to slide in
           .one('bsTransitionEnd', function () {
-            that.$element.trigger('focus').trigger(e)
+              that.$element.trigger('focus').trigger(e);
+              that.enforceFocus();
           })
           .emulateTransitionEnd(Modal.TRANSITION_DURATION) :
-        that.$element.trigger('focus').trigger(e)
+        that.$element.trigger('focus').trigger(e);
+        that.enforceFocus();
     })
   }
 
@@ -146,6 +148,7 @@
           this.$element.trigger('focus')
         }
       }, this))
+      this.$element.trigger('enforceFocus.bs.modal');
   }
 
   Modal.prototype.escape = function () {

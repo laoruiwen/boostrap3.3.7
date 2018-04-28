@@ -32,7 +32,7 @@
 
   Tooltip.DEFAULTS = {
     animation: true,
-    placement: 'top',
+    placement: 'auto top',
     selector: false,
     template: '<div class="tooltip" role="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>',
     trigger: 'hover focus',
@@ -63,15 +63,16 @@
     for (var i = triggers.length; i--;) {
       var trigger = triggers[i]
 
-      if (trigger == 'click') {
-        this.$element.on('click.' + this.type, this.options.selector, $.proxy(this.toggle, this))
-      } else if (trigger != 'manual') {
-        var eventIn  = trigger == 'hover' ? 'mouseenter' : 'focusin'
-        var eventOut = trigger == 'hover' ? 'mouseleave' : 'focusout'
+        if (trigger == 'click') {
+            this.$element.on('click.' + this.type, this.options.selector, $.proxy(this.toggle, this));
 
-        this.$element.on(eventIn  + '.' + this.type, this.options.selector, $.proxy(this.enter, this))
-        this.$element.on(eventOut + '.' + this.type, this.options.selector, $.proxy(this.leave, this))
-      }
+        } /*else if (trigger != 'manual') {
+       var eventIn  = trigger == 'hover' ? '' : 'focusin'
+       var eventOut = trigger == 'hover' ? '' : 'focusout'
+
+       this.$element.on(eventIn  + '.' + this.type, this.options.selector, $.proxy(this.enter, this))
+       this.$element.on(eventOut + '.' + this.type, this.options.selector, $.proxy(this.leave, this))
+       }*/
     }
 
     this.options.selector ?
@@ -248,7 +249,7 @@
 
   Tooltip.prototype.applyPlacement = function (offset, placement) {
     var $tip   = this.tip()
-    var width  = $tip[0].offsetWidth
+    //var width  = $tip[0].offsetWidth
     var height = $tip[0].offsetHeight
 
     // manually read margins because getBoundingClientRect includes difference
@@ -288,12 +289,12 @@
     if (delta.left) offset.left += delta.left
     else offset.top += delta.top
 
-    var isVertical          = /top|bottom/.test(placement)
-    var arrowDelta          = isVertical ? delta.left * 2 - width + actualWidth : delta.top * 2 - height + actualHeight
-    var arrowOffsetPosition = isVertical ? 'offsetWidth' : 'offsetHeight'
+    //var isVertical          = /top|bottom/.test(placement)
+    //var arrowDelta          = isVertical ? delta.left * 2 - width + actualWidth : delta.top * 2 - height + actualHeight
+    //var arrowOffsetPosition = isVertical ? 'offsetWidth' : 'offsetHeight'
 
     $tip.offset(offset)
-    this.replaceArrow(arrowDelta, $tip[0][arrowOffsetPosition], isVertical)
+    //this.replaceArrow(arrowDelta, $tip[0][arrowOffsetPosition], isVertical)
   }
 
   Tooltip.prototype.replaceArrow = function (delta, dimension, isVertical) {

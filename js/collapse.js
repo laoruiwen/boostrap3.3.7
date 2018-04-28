@@ -133,7 +133,9 @@
   }
 
   Collapse.prototype.toggle = function () {
-    this[this.$element.hasClass('in') ? 'hide' : 'show']()
+      var toggleEvent = $.Event('toggle.bs.collapse')
+      this.$element.trigger(toggleEvent)
+      this[this.$element.hasClass('in') ? 'hide' : 'show']()
   }
 
   Collapse.prototype.getParent = function () {
