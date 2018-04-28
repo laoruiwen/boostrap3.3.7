@@ -117,7 +117,9 @@ module.exports = function (grunt) {
           'js/popover.js',
           'js/scrollspy.js',
           'js/tab.js',
-          'js/affix.js'
+          'js/affix.js',
+          'js/bootstrap-switch.js',
+          'js/radiocheck.js'
         ],
         dest: 'dist/js/<%= pkg.name %>.js'
       }
@@ -377,7 +379,7 @@ module.exports = function (grunt) {
     watch: {
       src: {
         files: '<%= jshint.core.src %>',
-        tasks: ['jshint:core', 'qunit', 'concat']
+        tasks: ['dist-js']
       },
       test: {
         files: '<%= jshint.test.src %>',

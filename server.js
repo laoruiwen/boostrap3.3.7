@@ -2,48 +2,19 @@
  * Created by raven on 2018/4/11.
  *
  * 命令node server.js
+ *
+ * http://localhost:8888/css/bootstrap.css
  */
-var http = require('http');
-var fs = require('fs');//引入文件读取模块
+var express = require('express');
+var app = express();
 
-var documentRoot = 'D:/webDesign/boostrap3.3.7';
-//需要访问的文件的存放目录（项目所在位置的文件夹路径）
+app.get('/', function (req, res) {
+    res.send('Hello World!');
+});
+app.use(express.static('dist'));
+var server = app.listen(8888, function () {
+    var host = server.address().address;
+    var port = server.address().port;
 
-var server= http.createServer(function(req,res){
-
-    var url = req.url;
-    //客户端输入的url，例如如果输入localhost:8888/index.html
-    //那么这里的url == /index.html
-
-    var file = documentRoot + url;
-    console.log(file);
-    //E:/PhpProject/html5/websocket/www/index.html
-
-
-    fs.readFile( file , function(err,data){
-        /*
-         一参为文件路径
-         二参为回调函数
-         回调函数的一参为读取错误返回的信息，返回空就没有错误
-         二参为读取成功返回的文本内容
-         */
-        if(err){
-            res.writeHeader(404,{
-                'content-type' : 'text/html;charset="utf-8"'
-            });
-            res.write('<h1>404错误</h1><p>你要找的页面不存在</p>');
-            res.end();
-        }else{
-            res.writeHeader(200);
-            res.write(data);//将index.html显示在客户端
-            res.end();
-
-        }
-
-    });
-
-
-
-}).listen(8888);
-
-console.log('服务器开启成功');
+    console.log('Example app listening at http://%s:%s', host, port);
+});
