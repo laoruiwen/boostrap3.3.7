@@ -85,6 +85,75 @@
 @icon-btn-active-color: 			@gray-dark;
 
 
+// Global spacing
+// =============================================================================
+
+@global-spacing:                16px;
+
+@global-spacing-xs:             5px;
+@global-spacing-sm:             10px;
+@global-spacing-lg:             24px;
+@global-spacing-xl:             32px;
+
+
+// Margin
+// -----------------------------------------------------------------------------
+
+@global-margin:									  @global-spacing;
+
+@global-margin-xs:							  @global-spacing-xs;
+@global-margin-sm:							  @global-spacing-sm;
+
+@global-margin-lg:							  @global-spacing-lg;
+@global-margin-xl:							  @global-spacing-xl;
+
+
+// =============================================================================
+// Table variables
+// =============================================================================
+
+@table-cell-padding:       7px;
+@table-cell-padding-compact: 1px 5px;
+@table-line-height:        @line-height-base;
+@table-height:             22px;
+@table-bg:                 transparent; // overall background-color
+@table-bg-striped:         #f1fafe;
+@table-bg-hover:           #e9e9e9;// #fbf6e9;
+@table-bg-active:          #ffd;
+@table-border-color:       #ddd; // table and cell border
+
+@table-primary-bg:         rgba(red(@brand-primary), green(@brand-primary), blue(@brand-primary), .115);
+@table-primary-color:      darken(@brand-primary, 8%);
+
+@table-success-bg:         rgba(red(@brand-success), green(@brand-success), blue(@brand-success), .115);
+@table-success-color:          @brand-success;
+
+@table-warning-bg:         rgba(red(@brand-warning), green(@brand-warning), blue(@brand-warning), .115);
+@table-warning-color:          @brand-warning;
+
+@table-danger-bg:          rgba(red(@brand-danger), green(@brand-danger), blue(@brand-danger), .115);
+@table-danger-color:           @brand-danger;
+
+
+// =============================================================================
+// Pagination variables
+// =============================================================================
+
+@pagination-margin:                    15px;
+@pagination-padding:                   0.5em 1em;
+@pagination-line-height:               1.2;
+@pagination-bg:                        #fff;
+@pagination-border:                    #ddd;
+@pagination-color:                     @gray-light;
+
+@pagination-hover-bg:                  @gray-lighter;
+
+@pagination-active-bg:                 @brand-primary;
+@pagination-active-color:              #fff;
+
+@pagination-disabled-color:            @gray-light;
+
+
 @fa-var-500px: "\f26e";
 @fa-var-adjust: "\f042";
 @fa-var-adn: "\f170";

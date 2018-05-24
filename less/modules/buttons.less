@@ -11,7 +11,14 @@
   font-weight: @btn-font-weight;
   line-height: @btn-line-height-base;
   border-radius: @border-radius-base;
+  display: inline-block;
   padding: 4px 12px;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  -ms-touch-action : manipulation;
+  touch-action : manipulation;
+  .user-select(none);
   -webkit-font-smoothing: subpixel-antialiased;
   transition: border .25s linear, color .25s linear, background-color .25s linear;
   

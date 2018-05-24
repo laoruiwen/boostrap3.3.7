@@ -37,6 +37,14 @@ label {
   line-height: 1.72222;
 }
 
+[readonly]{
+  background-color: @readonly-color;
+  cursor: default;
+}
+
+.notBackground[readonly]{
+  background-color: @inverse;
+}
 
 // Normalize form controls
 //
@@ -476,11 +484,10 @@ input[type="checkbox"] {
 .form-inline {
 
   // Kick in the inline
-  @media (min-width: @screen-sm-min) {
+
     // Inline-block all the things for "inline"
     .form-group {
       display: inline-block;
-      width: 70%;
       //margin-bottom: 0;
       vertical-align: middle;
     }
@@ -541,7 +548,7 @@ input[type="checkbox"] {
     .has-feedback .form-control-feedback {
       top: 0;
     }
-  }
+
 }
 
 

@@ -1,0 +1,46 @@
+.height100 {
+  height: 100%;
+}
+
+.width100 {
+  width: 100%
+}
+
+//red*
+.redIcon {
+  color: red;
+  margin-left: 3px;
+  vertical-align: middle;
+  font-size: 130%
+}
+
+//horizontalLine
+.horizontalLine {
+  border-bottom: 1px solid @horizontalLine-color;
+  margin-bottom: @horizontalLine-hight;
+  padding-bottom: @horizontalLine-hight
+}
+
+//progress
+.fog-progress {
+  .progress-variant(@progress-big-url,@progress-big-size);
+}
+
+//small progress
+.fog-progress-small {
+  .progress-variant(@progress-small-url,@progress-small-size);
+}
+
+//arrow
+.select-arrow {
+  display: inline-block;
+  border-width: 8px 6px;
+  border-color: #34495e transparent;
+  border-style: solid;
+  border-bottom-style: none;
+  right: 16px;
+  top: 42%;
+  -webkit-transform: scale(1.001);
+  -ms-transform: scale(1.001);
+  transform: scale(1.001);
+}

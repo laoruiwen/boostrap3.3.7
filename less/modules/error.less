@@ -1,0 +1,44 @@
+.errorPage {
+  margin-top: @error-page-margin;
+  margin-left: @error-page-margin;
+  height: @error-page-hight;
+
+  .left {
+    text-align: center;
+    padding: 6px 10px;
+    float: left;
+
+    .errorImage {
+      background: url(@error-image-url) no-repeat;
+      width: @error-image-width;
+      height: @error-image-hight;
+      display: inline-block;
+    }
+  }
+
+  .right {
+    text-align: left;
+    float: left;
+
+    .title {
+      color: @error-title-color;
+      font-size: @error-title-size;
+      margin-bottom: 10px;
+    }
+
+    .content {
+      font-size: @error-title-content;
+
+      .fresh {
+        color: @error-fresh-color;
+        text-decoration: underline;
+        cursor: pointer;
+
+        &:hover {
+          color: @error-fresh-hover-color;
+        }
+      }
+    }
+  }
+}
+
