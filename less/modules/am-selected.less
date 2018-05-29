@@ -1,0 +1,207 @@
+// Name:            Selected
+//
+// Description:     Define style for Selected Plugin
+//
+// Component:       `.am-selected`
+//
+// Sub-objects:     `.am-selected-btn`
+//                  `.am-selected-status`
+//                  `.am-selected-content`
+//                  `.am-selected-list`
+//
+// States:
+//
+// Used:            Icon
+//
+// Uses:
+//
+//= require icon.less
+//= require ui.dropdown.less
+// =============================================================================
+
+/* ==========================================================================
+   Component: Selected Plugin
+ ============================================================================ */
+
+.@{ns}selected {
+  width: 200px;
+}
+
+.@{ns}selected-btn {
+  width: 100%;
+  padding-left: 5px;
+  text-align: right;
+
+  &.@{ns}btn-default {
+    background: none;
+  }
+
+  .@{ns}invalid & {
+    border-color: @brand-danger;
+  }
+}
+
+.@{ns}selected-header {
+  height: 45px;
+  background-color: #f2f2f2;
+  border-bottom: 1px solid #ddd;
+  display: none;
+}
+
+.@{ns}selected-status {
+  text-align: left;
+  width: 100%;
+  margin-right: -10px;
+  .text-overflow();
+}
+
+.@{ns}selected-content {
+  padding: 5px 0;
+}
+
+.@{ns}selected-content {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: @z-index-dropdown;
+  display: none;
+  float: left;
+  min-width: 160px;
+  padding: 5px 0;
+  margin: 9px 0 0;
+  text-align: left;
+  line-height: @line-height-base;
+  background-color: @dropdown-bg;
+  border: 1px solid @dropdown-border-color;
+  border-radius: @global-radius;
+  background-clip: padding-box;
+  animation-duration: .15s;
+
+  &:before,
+  &:after {
+    position: absolute;
+    display: block;
+    content: "";
+    width: 0;
+    height: 0;
+    border : 8px dashed transparent;
+    z-index: 1;
+    border-bottom-style: solid;
+    border-width: 0 8px 8px;
+    left: 10px;
+    top: -8px;
+    pointer-events: none
+  }
+
+  &:before {
+    border-bottom-color: #ccc;
+    bottom: 0
+  }
+
+  &:after {
+    border-bottom-color : #fff;
+    bottom: -1px;
+    top: -7px;
+  }
+
+  .@{ns}active > & {
+    display: block;
+    // .animation(@dropdown-animation 0.3s ease-in-out);
+  }
+
+  :first-child {
+    margin-top: 0;
+  }
+}
+
+.@{ns}selected-search {
+  padding: 0 10px 10px;
+
+  .@{ns}form-field {
+    padding: .5em;
+  }
+}
+
+.@{ns}selected-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: @font-size-base;
+
+  li {
+    position: relative;
+    cursor: pointer;
+    padding: 3px 10px;
+    transition: background-color .15s;
+
+    &:hover {
+      background-color: #f8f8f8;
+
+      .@{ns}icon-check {
+        opacity: .6;
+      }
+    }
+
+    &.@{ns}checked {
+      .@{ns}icon-check {
+        opacity: 1;
+        color: @brand-primary;
+      }
+    }
+
+    // disabled item
+    &.@{ns}disabled {
+      opacity: .5;
+      pointer-events: none;
+      cursor: not-allowed;
+    }
+  }
+
+  .@{ns}selected-list-header {
+    margin-top: 8px;
+    font-size: 1.3rem;
+    color: @gray-light;
+    border-bottom: 1px solid #e5e5e5;
+    cursor: default;
+
+    &:hover {
+      background: none;
+    }
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  .@{ns}selected-text {
+    .text-overflow();
+    margin-right: 30px;
+  }
+
+  .@{ns}icon-check {
+    position: absolute;
+    right: 8px;
+    top: 5px;
+    color: @gray-light;
+    opacity: 0;
+    transition: opacity .15s;
+  }
+}
+
+.@{ns}selected-hint {
+  line-height: 1.2;
+  color: @brand-danger;
+
+  &:not(:empty) {
+    margin-top: 10px;
+    border-top: 1px solid #e5e5e5;
+    padding: 10px 10px 0;
+  }
+}
+
+// placeholder color
+.@{ns}selected-placeholder {
+  opacity: .65;
+}
+
+// TODO: 移动端样式？
